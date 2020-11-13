@@ -14,6 +14,10 @@ public class Main {
         k.dodaj("Hamo", b);
         k.dodaj("Avdo", a);
         k.dodaj("Mrav", new MobilniBroj(69, "989-632"));
-        System.out.println(k.naSlovo('M'));
+        k.dodaj("Auto", new FiksniBroj(BRCKO, "790-871"));
+        k.dodaj("Zmija", new FiksniBroj(BRCKO, "700-151"));
+        k.dodaj("Bosna", new FiksniBroj(BRCKO, "150-351"));
+        k.dodaj("Lampa", new FiksniBroj(BIHAC, "156-331"));
+        System.out.println(k.izGrada(BRCKO));
     }
 }

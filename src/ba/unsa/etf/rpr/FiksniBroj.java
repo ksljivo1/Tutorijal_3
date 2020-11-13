@@ -4,7 +4,7 @@ public class FiksniBroj extends TelefonskiBroj {
     private Grad grad;
     private String broj;
 
-    static Integer dajPozivniBroj(Grad grad) {
+    public static Integer dajPozivniBroj(Grad grad) {
         switch(grad) {
             case BIHAC:
                 return 37;

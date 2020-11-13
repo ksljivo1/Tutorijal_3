@@ -1,7 +1,6 @@
 package ba.unsa.etf.rpr;
 
-import java.util.HashMap;
-import java.util.Iterator;
+import java.util.*;
 
 public class Imenik {
     private HashMap<String, TelefonskiBroj> imenik = new HashMap<String, TelefonskiBroj>();
@@ -33,5 +32,16 @@ public class Imenik {
             }
         }
         return imena;
+    }
+
+    public Set<String> izGrada(Grad grad) {
+        Set<String> gradovi = new TreeSet<String>();
+        for(String ime : imenik.keySet()) {
+            if(imenik.get(ime) instanceof FiksniBroj &&
+            FiksniBroj.dajPozivniBroj(grad) == Character.getNumericValue(imenik.get(ime).ispisi().charAt(1)) * 10 +
+            Character.getNumericValue(imenik.get(ime).ispisi().charAt(2)))
+                gradovi.add(ime);
+        }
+        return gradovi;
     }
 }
