@@ -38,7 +38,7 @@ public class FiksniBroj extends TelefonskiBroj {
 
     @Override
     public String ispisi() {
-        return "0" + dajPozivniBroj(grad).toString() + "-" + broj;
+        return "0" + dajPozivniBroj(grad).toString() + "/" + broj;
     }
 
     @Override
