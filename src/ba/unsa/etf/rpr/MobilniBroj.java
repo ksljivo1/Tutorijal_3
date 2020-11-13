@@ -4,7 +4,7 @@ public class MobilniBroj extends TelefonskiBroj {
     private int mobilnaMreza;
     private String broj;
 
-    MobilniBroj(int mobilnaMreza, String broj) {
+    public MobilniBroj(int mobilnaMreza, String broj) {
        this.broj = broj;
        this.mobilnaMreza = mobilnaMreza;
     }
