@@ -13,6 +13,7 @@ public class Main {
         k.dodaj("Mujo", c);
         k.dodaj("Hamo", b);
         k.dodaj("Avdo", a);
-        System.out.println(k.dajIme(a));
+        k.dodaj("Mrav", new MobilniBroj(69, "989-632"));
+        System.out.println(k.naSlovo('M'));
     }
 }
