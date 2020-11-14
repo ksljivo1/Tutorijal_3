@@ -1,6 +1,13 @@
 package ba.unsa.etf.rpr;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class Imenik {
     private HashMap<String, TelefonskiBroj> imenik = new HashMap<String, TelefonskiBroj>();
@@ -43,5 +50,21 @@ public class Imenik {
                 gradovi.add(ime);
         }
         return gradovi;
+    }
+
+    public Set<TelefonskiBroj> izGradaBrojevi(Grad g) {
+        Set<TelefonskiBroj> brojevi = new TreeSet<TelefonskiBroj>(new Comparator<TelefonskiBroj>() {
+            @Override
+            public int compare(TelefonskiBroj o1, TelefonskiBroj o2) {
+                return o1.ispisi().compareTo(o2.ispisi());
+            }
+        });
+        for(String ime : imenik.keySet()) {
+            if(imenik.get(ime) instanceof FiksniBroj &&
+            FiksniBroj.dajPozivniBroj(g) == Character.getNumericValue(imenik.get(ime).ispisi().charAt(1)) * 10 +
+            Character.getNumericValue(imenik.get(ime).ispisi().charAt(2)))
+                brojevi.add(imenik.get(ime));
+        }
+        return brojevi;
     }
 }

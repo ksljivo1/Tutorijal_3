@@ -45,5 +45,4 @@ public class FiksniBroj extends TelefonskiBroj {
     public int hashCode() {
         return dajPozivniBroj(grad) + broj.hashCode();
     }
-
 }
